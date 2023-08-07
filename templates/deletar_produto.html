@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+    <h1>Excluir Produto</h1>
+    <p>Tem certeza que deseja excluir o produto "{{ produto.nome }}"?</p>
+    <form action="{{ url_for('deletar_produto', produto_id=produto.id) }}" method="POST">
+        <br/>
+        <input type="submit" value="Excluir">
+    </form>
+</body>
+</html>

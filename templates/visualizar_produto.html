@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+    <h1>Detalhes do Produto</h1>
+    <p>ID: {{ produto.id }}</p>
+    <p>Nome: {{ produto.nome }}</p>
+    <p>Descrição: {{ produto.descricao }}</p>
+    <p>Preço: {{ produto.preco }}</p>
+    <p><a href="{{ url_for('editar_produto', produto_id=produto.id) }}">Editar</a></p>
+    <br/>
+    <p><a href="{{ url_for('deletar_produto', produto_id=produto.id) }}">Excluir</a></p>
+    <br/>
+    <button onclick="window.location.href='/produto'">Ver Lista</button>
+</body>
+</html>

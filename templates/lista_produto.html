@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <ul>
+        {% for produto in produto %}
+            <li><a href="{{ url_for('visualizar_produto', produto_id=produto.id) }}">{{ produto.nome }}</a></li>
+        {% endfor %}
+        <br/>
+        <button onclick="window.location.href='/criar_produto'">Cadastrar Novo Produto</button>
+
+    </ul>
+</body>
+</html>

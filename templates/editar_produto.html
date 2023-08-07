@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+    <h1>Editar Produto</h1>
+    <form action="{{ url_for('editar_produto', produto_id=produto.id) }}" method="POST">
+        Nome: <input type="text" name="nome" value="{{ produto.nome }}"><br>
+        Descrição: <input type="text" name="descricao" value="{{ produto.descricao }}"><br>
+        Preço: <input type="number" step="0.01" name="preco" value="{{ produto.preco }}"><br>
+        <br/>
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
